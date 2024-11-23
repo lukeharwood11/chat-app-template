@@ -1,4 +1,4 @@
-# Chat App Template 
+# FastAPI Chat App Template 
 ![badge](https://badgen.net/badge/MLE/Tutorial/blue?icon=link)
 
 This repository contains a quick start for creating a chat app with a FastAPI server.
