@@ -1,7 +1,7 @@
-# Connect Four App - AI
+# Chat App Template 
 ![badge](https://badgen.net/badge/MLE/Tutorial/blue?icon=link)
 
-This project provides some MLE challenges to gain experience integrating AI into applications!
+This repository contains a quick start for creating a chat app with a FastAPI server.
 
 ## Getting Started
 
@@ -11,12 +11,7 @@ This project provides some MLE challenges to gain experience integrating AI into
 .
 ├── api/
 │   ├── __init__.py
-│   ├── agents/ # put all agent code here
-│   │   ├── __init__.py
-│   │   ├── base.py
-│   │   ├── minimax.py
-│   │   ├── openai.py
-│   │   └── rand.py
+│   ├── llm         # business logic for calling llm
 │   ├── controller  # interface connecting app logic to the router
 │   ├── main.py     # define application
 │   ├── models.py   # define request models here
@@ -104,12 +99,12 @@ Follow [Docker's instructions](https://www.docker.com/get-started/) on getting s
 
 First we must build the api/client
 ```bash
-docker build -t connect4 -f ./docker/Dockerfile .
+docker build -t chat -f ./docker/Dockerfile .
 ```
 
 Next we can run the application
 ```bash
-docker run --env-file .env -p 8080:8080 connect4
+docker run --env-file .env -p 8080:8080 chat
 ```
 
 #### Docker Compose

@@ -1,0 +1,134 @@
+.home-page-wrapper {
+    height: calc(100vh - 4rem);
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.chat-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    position: relative;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.messages-container {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    background-color: #f8fafc;
+}
+
+.messages-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.messages-container::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.messages-container::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 3px;
+}
+
+@media (max-width: 768px) {
+    .home-page-wrapper {
+        height: calc(100vh - 4rem);
+        padding: 0 0.5rem;
+    }
+    
+    .messages-container {
+        padding: 16px;
+    }
+}
+
+.home-container {
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Add responsive adjustments */
+@media screen and (max-width: 768px) {
+  .home-container {
+    gap: 0.75rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .home-container {
+    gap: 0.5rem;
+  }
+}
+
+.message-wrapper {
+    display: flex;
+    margin: 8px 0;
+    padding: 0 16px;
+}
+
+.message-wrapper.assistant {
+    justify-content: flex-start;
+}
+
+.message-wrapper.user {
+    justify-content: flex-end;
+}
+
+.assistant-message {
+    max-width: 80%;
+    background-color: #f3f4f6;
+    border-radius: 12px;
+    padding: 12px 16px;
+    position: relative;
+}
+
+.assistant-message .timestamp {
+    position: absolute;
+    bottom: -20px;
+    left: 12px;
+    font-size: 0.75rem;
+    color: #6b7280;
+}
+
+/* Markdown styles */
+.assistant-message h1,
+.assistant-message h2,
+.assistant-message h3 {
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+}
+
+.assistant-message p {
+    margin: 0.5em 0;
+}
+
+.assistant-message code {
+    background-color: #e5e7eb;
+    padding: 2px 4px;
+    border-radius: 4px;
+    font-family: monospace;
+}
+
+.assistant-message pre {
+    background-color: #1f2937;
+    color: #e5e7eb;
+    padding: 12px;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin: 0.5em 0;
+}
+
+.assistant-message ul,
+.assistant-message ol {
+    margin: 0.5em 0;
+    padding-left: 1.5em;
+}

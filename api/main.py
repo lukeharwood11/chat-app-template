@@ -7,13 +7,13 @@ import logging
 
 logging.basicConfig(level=logging.INFO)
 log = logging.getLogger(__name__)
-log.info("Starting Connect4 API...")
+log.info("Starting Chat Template API...")
 
 controller = Controller()
 
 app = FastAPI(
-    title="AI Connect4",
-    description="An AI Connect4 game",
+    title="Chat Template",
+    description="A template for a chat API",
     version="0.1.0",
 )
 

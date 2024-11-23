@@ -1,23 +1,8 @@
-from api.agents.minimax import MinimaxAgent
-from api.agents.openai import OpenAIAgent
-from api.agents.rand import RandomAgent
-from api.agents.base import Agent
-from typing import List
-
+from api.models import ChatCompletionRequest
+from api import llm
 
 class Controller:
-    agent_map = {
-        "random": RandomAgent(),
-        "minimax": MinimaxAgent(),
-        "openai": OpenAIAgent(),
-    }
+    """Interface for connecting the API request to API business logic."""
 
-    def _get_agent(self, agent_name: str) -> Agent:
-        return self.agent_map[agent_name]
-
-    def is_valid_agent(self, agent_name: str) -> bool:
-        return agent_name in self.agent_map
-
-    def get_move(self, agent_name: str, board: List[List[int]]) -> int | None:
-        agent = self._get_agent(agent_name)
-        return agent.get_move(board)
+    async def get_chat_completion(self, request: ChatCompletionRequest) -> str:
+        return await llm.get_chat_completion(request.messages, request.model, request.temperature, request.maxTokens)

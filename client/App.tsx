@@ -1,20 +1,16 @@
 import React from 'react';
-import './App.css';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { GamePage } from './game/game.page';
-import { ToastContainer } from 'react-toast';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Layout } from './components/Layout/Layout';
+import { HomePage } from './pages/Home/HomePage';
 
-function App() {
-  return (
-    <div className='App'>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<GamePage />} />
-        </Routes>
-      </BrowserRouter>
-      <ToastContainer position="bottom-right" />
-    </div>
-  );
-}
-
-export default App;
+export const App = () => {
+    return (
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<Layout />}>
+                    <Route index element={<HomePage />} />
+                </Route>
+            </Routes>
+        </BrowserRouter>
+    );
+};
